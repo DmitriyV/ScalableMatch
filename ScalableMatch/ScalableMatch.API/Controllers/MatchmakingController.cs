@@ -17,7 +17,7 @@ namespace ScalableMatch.API.Controllers
         [HttpPost("StartMatchmaking")]
         [ProducesResponseType(StatusCodes.Status200OK)]
         [ProducesResponseType(StatusCodes.Status400BadRequest)]
-        public ActionResult StartMatchmaking([FromBody] StartMatchmakingRequest request)
+        public ActionResult<StartMatchmakingResponse> StartMatchmaking([FromBody] StartMatchmakingRequest request)
         {
             if (string.IsNullOrWhiteSpace(request.Player.PlayerId))
                 return BadRequest("PlayerId is empty.");
@@ -25,7 +25,14 @@ namespace ScalableMatch.API.Controllers
             if(request.Player.LatencyInMs <= 0)
                 return BadRequest("Latency cannot be negative or zero.");
 
-            return Ok();
+            return Ok(new StartMatchmakingResponse()
+            { 
+                MatchmakingTicket = new MatchmakingTicket()
+                {
+                    Player = request.Player,
+                    TicketId = "Ticket Id"
+                }
+            });
         }
 
         [HttpPost("StopMatchmaking")]
@@ -39,7 +46,7 @@ namespace ScalableMatch.API.Controllers
         [HttpPost("StartMatchBackfill")]
         [ProducesResponseType(StatusCodes.Status200OK)]
         [ProducesResponseType(StatusCodes.Status400BadRequest)]
-        public ActionResult StartMatchBackfill([FromBody] StartMatchmakingRequest request)
+        public ActionResult StartMatchBackfill([FromBody] StartMatchBackfillRequest request)
         {
             return Ok();
         }
