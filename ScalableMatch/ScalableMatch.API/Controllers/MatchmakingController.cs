@@ -31,7 +31,7 @@ namespace ScalableMatch.API.Controllers
         [HttpPost("StopMatchmaking")]
         [ProducesResponseType(StatusCodes.Status200OK)]
         [ProducesResponseType(StatusCodes.Status400BadRequest)]
-        public ActionResult StopMatchmaking([FromBody] StartMatchmakingRequest request)
+        public ActionResult StopMatchmaking([FromBody] StopMatchmakingRequest request)
         {
             return Ok();
         }
