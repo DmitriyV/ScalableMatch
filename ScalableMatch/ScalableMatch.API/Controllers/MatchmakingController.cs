@@ -8,10 +8,12 @@ namespace ScalableMatch.API.Controllers
     public class MatchmakingController : ControllerBase
     {
         private readonly ILogger<MatchmakingController> _logger;
+        private readonly IMatchmakingService _matchmakingService;
 
-        public MatchmakingController(ILogger<MatchmakingController> logger)
+        public MatchmakingController(ILogger<MatchmakingController> logger, IMatchmakingService matchmakingService)
         {
             _logger = logger;
+            _matchmakingService = matchmakingService;
         }
 
         [HttpPost("StartMatchmaking")]
@@ -24,6 +26,8 @@ namespace ScalableMatch.API.Controllers
 
             if(request.Player.LatencyInMs <= 0)
                 return BadRequest("Latency cannot be negative or zero.");
+
+            _matchmakingService.StartMatchmaking();
 
             return Ok(new StartMatchmakingResponse()
             { 
@@ -40,6 +44,7 @@ namespace ScalableMatch.API.Controllers
         [ProducesResponseType(StatusCodes.Status400BadRequest)]
         public ActionResult StopMatchmaking([FromBody] StopMatchmakingRequest request)
         {
+            _matchmakingService.StopMatchmaking();
             return Ok();
         }
 
@@ -48,6 +53,7 @@ namespace ScalableMatch.API.Controllers
         [ProducesResponseType(StatusCodes.Status400BadRequest)]
         public ActionResult StartMatchBackfill([FromBody] StartMatchBackfillRequest request)
         {
+            //todo
             return Ok();
         }
     }
