@@ -3,9 +3,11 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.9.34714.143
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ScalableMatch.API", "ScalableMatch.API\ScalableMatch.API.csproj", "{34811869-54F6-4CD8-93AF-4FC3B8F4471D}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ScalableMatch.API", "ScalableMatch.API\ScalableMatch.API.csproj", "{34811869-54F6-4CD8-93AF-4FC3B8F4471D}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ScalableMatch.API.Tests", "ScalableMatch.API.Tests\ScalableMatch.API.Tests.csproj", "{3C468F14-112F-4BED-A505-7584ABBE400F}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ScalableMatch.API.Tests", "ScalableMatch.API.Tests\ScalableMatch.API.Tests.csproj", "{3C468F14-112F-4BED-A505-7584ABBE400F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ScalableMatch.Domain", "ScalableMatch.Domain\ScalableMatch.Domain.csproj", "{C296DB29-CB6B-487C-88F5-D95CD797798B}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -21,6 +23,10 @@ Global
 		{3C468F14-112F-4BED-A505-7584ABBE400F}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{3C468F14-112F-4BED-A505-7584ABBE400F}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{3C468F14-112F-4BED-A505-7584ABBE400F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C296DB29-CB6B-487C-88F5-D95CD797798B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C296DB29-CB6B-487C-88F5-D95CD797798B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C296DB29-CB6B-487C-88F5-D95CD797798B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C296DB29-CB6B-487C-88F5-D95CD797798B}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

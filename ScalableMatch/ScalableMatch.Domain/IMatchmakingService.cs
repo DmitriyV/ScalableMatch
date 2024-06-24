@@ -1,4 +1,4 @@
-﻿namespace ScalableMatch.API
+﻿namespace ScalableMatch.Domain
 {
     public interface IMatchmakingService
     {

@@ -1,5 +1,6 @@
 using Microsoft.AspNetCore.Mvc;
 using ScalableMatch.API.Models;
+using ScalableMatch.Domain;
 
 namespace ScalableMatch.API.Controllers
 {

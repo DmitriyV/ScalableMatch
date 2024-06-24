@@ -3,6 +3,7 @@ using Microsoft.Extensions.Logging;
 using Moq;
 using ScalableMatch.API.Controllers;
 using ScalableMatch.API.Models;
+using ScalableMatch.Domain;
 
 namespace ScalableMatch.API.Tests
 {
@@ -13,7 +14,8 @@ namespace ScalableMatch.API.Tests
         {
             // Arrange
             var logger = new Mock<ILogger<MatchmakingController>>().Object;
-            var controller = new MatchmakingController(logger);
+            var matchMackingService = new Mock<IMatchmakingService>().Object;
+            var controller = new MatchmakingController(logger, matchMackingService);
             var playerWithEmptyId = new Player() { PlayerId = string.Empty, LatencyInMs = 10 };
             var request = new StartMatchmakingRequest
             {
@@ -35,7 +37,8 @@ namespace ScalableMatch.API.Tests
         {
             // Arrange
             var logger = new Mock<ILogger<MatchmakingController>>().Object;
-            var controller = new MatchmakingController(logger);
+            var matchMackingService = new Mock<IMatchmakingService>().Object;
+            var controller = new MatchmakingController(logger, matchMackingService);
             var playerWithInvalidLatency = new Player() { PlayerId = "player id", LatencyInMs = invalidLatency };
             var request = new StartMatchmakingRequest
             {
