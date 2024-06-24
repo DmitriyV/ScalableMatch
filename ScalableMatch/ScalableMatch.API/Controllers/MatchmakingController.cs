@@ -25,13 +25,13 @@ namespace ScalableMatch.API.Controllers
             if (string.IsNullOrWhiteSpace(request.Player.PlayerId))
                 return BadRequest("PlayerId is empty.");
 
-            if(request.Player.LatencyInMs <= 0)
+            if (request.Player.LatencyInMs <= 0)
                 return BadRequest("Latency cannot be negative or zero.");
 
             _matchmakingService.StartMatchmaking();
 
             return Ok(new StartMatchmakingResponse()
-            { 
+            {
                 MatchmakingTicket = new MatchmakingTicket()
                 {
                     Player = request.Player,
