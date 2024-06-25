@@ -5,8 +5,17 @@ namespace ScalableMatch.Domain.Tests
 {
     public class GameSessionTests
     {
+
         [Fact]
-        public void CreatingSession_SessionIsFull_ShouldThrowException()
+        public void CreateSession_ValidParameters_SessionShouldBeCreated()
+        {
+            var expected = new GameSession() { Id = "id", AcceptBackfill = true, Status = Enums.GameSessionState.Created };
+
+            Assert.NotNull(expected);
+        }
+
+        [Fact]
+        public void AddPlayer_SessionIsFull_ShouldThrowException()
         {
             var gameSession = new GameSession() { Id = "id", Status = Enums.GameSessionState.Created };
             for (var i = 0; i < 10; i++)
@@ -18,11 +27,15 @@ namespace ScalableMatch.Domain.Tests
         }
 
         [Fact]
-        public void CreatingSession_ValidParameters_SessionShouldBeCreated()
+        public void AddPlayer_SamePlayerTwice_OnlyOnePlayerIAdded()
         {
-            var expected = new GameSession() { Id = "id", AcceptBackfill = true, Status = Enums.GameSessionState.Created };
+            var gameSession = new GameSession() { Id = "id", AcceptBackfill = true, Status = Enums.GameSessionState.Created };
+            var player = new Player() { Id = "id", LatencyInMs = 15 };
 
-            Assert.NotNull(expected);
+            gameSession.AddPlayer(player);
+            gameSession.AddPlayer(player);
+
+            Assert.Equal(1, gameSession.NumberOfPlayers);
         }
     }
 }

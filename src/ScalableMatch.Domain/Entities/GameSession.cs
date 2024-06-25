@@ -9,6 +9,8 @@ namespace ScalableMatch.Domain.Entities
     {
         private HashSet<Player> Players { get; set; } = [];
 
+        public int NumberOfPlayers => Players.Count;
+
         public bool HasEnoughPlayers => Players.Count >= PlayersInGameSession.Minumum;
 
         public bool IsFull => Players.Count == PlayersInGameSession.Maximum;
@@ -19,7 +21,7 @@ namespace ScalableMatch.Domain.Entities
 
         public void AddPlayer(Player player)
         {
-            if (HasEnoughPlayers)
+            if (IsFull)
                 throw new TooManyPlayersException();
 
             Players.Add(player);
