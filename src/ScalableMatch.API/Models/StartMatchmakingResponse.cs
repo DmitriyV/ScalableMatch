@@ -1,7 +1,9 @@
-﻿namespace ScalableMatch.API.Models
+﻿using ScalableMatch.Application.Common.Models;
+
+namespace ScalableMatch.API.Models
 {
     public class StartMatchmakingResponse
     {
-        public required MatchmakingTicket MatchmakingTicket { get; set; }
+        public required MatchmakingTicketDto MatchmakingTicket { get; set; }
     }
 }

@@ -1,8 +1,10 @@
-﻿namespace ScalableMatch.API.Models
+﻿using ScalableMatch.Application.Common.Models;
+
+namespace ScalableMatch.API.Models
 {
     public class StartMatchmakingRequest
     {
-        public required Player Player { get; set; }
+        public required PlayerDto Player { get; set; }
 
         public string? TicketId { get; set; }
     }

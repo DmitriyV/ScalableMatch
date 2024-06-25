@@ -1,6 +1,6 @@
 using Microsoft.AspNetCore.Mvc;
 using ScalableMatch.API.Models;
-using ScalableMatch.Domain;
+using ScalableMatch.Application.Common.Models;
 
 namespace ScalableMatch.API.Controllers
 {
@@ -9,12 +9,10 @@ namespace ScalableMatch.API.Controllers
     public class MatchmakingController : ControllerBase
     {
         private readonly ILogger<MatchmakingController> _logger;
-        private readonly IMatchmakingService _matchmakingService;
 
-        public MatchmakingController(ILogger<MatchmakingController> logger, IMatchmakingService matchmakingService)
+        public MatchmakingController(ILogger<MatchmakingController> logger)
         {
             _logger = logger;
-            _matchmakingService = matchmakingService;
         }
 
         [HttpPost("StartMatchmaking")]
@@ -22,20 +20,12 @@ namespace ScalableMatch.API.Controllers
         [ProducesResponseType(StatusCodes.Status400BadRequest)]
         public ActionResult<StartMatchmakingResponse> StartMatchmaking([FromBody] StartMatchmakingRequest request)
         {
-            if (string.IsNullOrWhiteSpace(request.Player.PlayerId))
-                return BadRequest("PlayerId is empty.");
-
-            if (request.Player.LatencyInMs <= 0)
-                return BadRequest("Latency cannot be negative or zero.");
-
-            _matchmakingService.StartMatchmaking();
-
             return Ok(new StartMatchmakingResponse()
             {
-                MatchmakingTicket = new MatchmakingTicket()
+                MatchmakingTicket = new MatchmakingTicketDto()
                 {
                     Player = request.Player,
-                    TicketId = "Ticket Id"
+                    Id = "Ticket Id"
                 }
             });
         }
@@ -45,7 +35,6 @@ namespace ScalableMatch.API.Controllers
         [ProducesResponseType(StatusCodes.Status400BadRequest)]
         public ActionResult StopMatchmaking([FromBody] StopMatchmakingRequest request)
         {
-            _matchmakingService.StopMatchmaking();
             return Ok();
         }
 

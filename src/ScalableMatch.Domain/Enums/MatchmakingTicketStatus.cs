@@ -1,4 +1,4 @@
-﻿namespace ScalableMatch.API.Models
+﻿namespace ScalableMatch.Domain.Enums
 {
     public enum MatchmakingTicketStatus
     {
