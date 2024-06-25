@@ -7,11 +7,11 @@ namespace ScalableMatch.Domain.Entities
 {
     public class GameSession : BaseEntity
     {
-        private HashSet<Player> _players { get; set; } = [];
+        private HashSet<Player> Players { get; set; } = [];
 
-        public bool HasEnoughPlayers => _players.Count >= PlayersInGameSession.Minumum;
+        public bool HasEnoughPlayers => Players.Count >= PlayersInGameSession.Minumum;
 
-        public bool IsFull => _players.Count == PlayersInGameSession.Maximum;
+        public bool IsFull => Players.Count == PlayersInGameSession.Maximum;
 
         public bool AcceptBackfill { get; set; } = true;
 
@@ -19,11 +19,11 @@ namespace ScalableMatch.Domain.Entities
 
         public void AddPlayer(Player player)
         {
-            var sessionIsFull = _players.Count >= PlayersInGameSession.Maximum;
+            var sessionIsFull = Players.Count >= PlayersInGameSession.Maximum;
             if (sessionIsFull)
                 throw new TooManyPlayersException();
 
-            _players.Add(player);
+            Players.Add(player);
         }
     }
 }
