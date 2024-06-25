@@ -24,6 +24,5 @@ namespace ScalableMatch.Domain.Tests
 
             Assert.NotNull(expected);
         }
-
     }
 }

@@ -23,7 +23,7 @@ namespace ScalableMatch.API.Controllers
         public ActionResult<StartMatchmakingResponse> StartMatchmaking([FromBody] StartMatchmakingRequest request)
         {
             var ticket = _startMatchmakingUseCase.QueuePlayer(request.Player);
-            
+
             return Ok(new StartMatchmakingResponse()
             {
                 MatchmakingTicket = ticket
