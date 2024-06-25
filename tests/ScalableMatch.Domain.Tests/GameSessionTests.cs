@@ -9,7 +9,13 @@ namespace ScalableMatch.Domain.Tests
         [Fact]
         public void CreateSession_ValidParameters_SessionShouldBeCreated()
         {
-            var expected = new GameSession() { Id = "id", AcceptBackfill = true, Status = Enums.GameSessionState.Created };
+            var expected = new GameSession()
+            {
+                Id = "id",
+                AcceptBackfill = true,
+                Status = Enums.GameSessionState.Created,
+                GameId = "game id"
+            };
 
             Assert.NotNull(expected);
         }
@@ -17,7 +23,12 @@ namespace ScalableMatch.Domain.Tests
         [Fact]
         public void AddPlayer_SessionIsFull_ShouldThrowException()
         {
-            var gameSession = new GameSession() { Id = "id", Status = Enums.GameSessionState.Created };
+            var gameSession = new GameSession()
+            {
+                Id = "id",
+                Status = Enums.GameSessionState.Created,
+                GameId = "game id"
+            };
             for (var i = 0; i < 10; i++)
             {
                 gameSession.AddPlayer(new Player() { Id = i.ToString(), LatencyInMs = i + 1 });
@@ -29,7 +40,13 @@ namespace ScalableMatch.Domain.Tests
         [Fact]
         public void AddPlayer_SamePlayerTwice_OnlyOnePlayerIAdded()
         {
-            var gameSession = new GameSession() { Id = "id", AcceptBackfill = true, Status = Enums.GameSessionState.Created };
+            var gameSession = new GameSession()
+            {
+                Id = "id",
+                AcceptBackfill = true,
+                Status = Enums.GameSessionState.Created,
+                GameId = "game id"
+            };
             var player = new Player() { Id = "id", LatencyInMs = 15 };
 
             gameSession.AddPlayer(player);
