@@ -3,7 +3,7 @@ using ScalableMatch.Domain.Exceptions;
 
 namespace ScalableMatch.Domain.Entities
 {
-    public class Player: BaseEntity
+    public class Player : BaseEntity
     {
         private int _latencyInMs;
 

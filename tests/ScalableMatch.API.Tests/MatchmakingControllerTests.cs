@@ -1,10 +1,3 @@
-using Microsoft.AspNetCore.Mvc;
-using Microsoft.Extensions.Logging;
-using Moq;
-using ScalableMatch.API.Controllers;
-using ScalableMatch.API.Models;
-using ScalableMatch.Domain;
-
 namespace ScalableMatch.API.Tests
 {
     public class MatchmakingControllerTests

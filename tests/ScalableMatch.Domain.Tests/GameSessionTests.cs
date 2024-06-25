@@ -11,10 +11,10 @@ namespace ScalableMatch.Domain.Tests
             var gameSession = new GameSession() { Id = "id", Status = Enums.GameSessionState.Created };
             for (var i = 0; i < 10; i++)
             {
-                gameSession.AddPlayer(new Player() { Id = i.ToString(), LatencyInMs = i + 1});
+                gameSession.AddPlayer(new Player() { Id = i.ToString(), LatencyInMs = i + 1 });
             }
 
-            Assert.Throws<TooManyPlayersException>(() => gameSession.AddPlayer(new Player() { Id = "10", LatencyInMs = 10}));
+            Assert.Throws<TooManyPlayersException>(() => gameSession.AddPlayer(new Player() { Id = "10", LatencyInMs = 10 }));
         }
 
         [Fact]
