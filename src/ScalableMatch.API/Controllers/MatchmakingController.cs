@@ -1,6 +1,6 @@
 using Microsoft.AspNetCore.Mvc;
 using ScalableMatch.API.Models;
-using ScalableMatch.Application.Common.Models;
+using ScalableMatch.Application.MatchmakingTickets.Start;
 
 namespace ScalableMatch.API.Controllers
 {
@@ -9,10 +9,12 @@ namespace ScalableMatch.API.Controllers
     public class MatchmakingController : ControllerBase
     {
         private readonly ILogger<MatchmakingController> _logger;
+        private readonly IStartMatchmakingUseCase _startMatchmakingUseCase;
 
-        public MatchmakingController(ILogger<MatchmakingController> logger)
+        public MatchmakingController(ILogger<MatchmakingController> logger, IStartMatchmakingUseCase startMatchmakingUseCase)
         {
             _logger = logger;
+            _startMatchmakingUseCase = startMatchmakingUseCase;
         }
 
         [HttpPost("StartMatchmaking")]
@@ -20,13 +22,11 @@ namespace ScalableMatch.API.Controllers
         [ProducesResponseType(StatusCodes.Status400BadRequest)]
         public ActionResult<StartMatchmakingResponse> StartMatchmaking([FromBody] StartMatchmakingRequest request)
         {
+            var ticket = _startMatchmakingUseCase.QueuePlayer(request.Player);
+            
             return Ok(new StartMatchmakingResponse()
             {
-                MatchmakingTicket = new MatchmakingTicketDto()
-                {
-                    Player = request.Player,
-                    Id = "Ticket Id"
-                }
+                MatchmakingTicket = ticket
             });
         }
 

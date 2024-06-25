@@ -1,6 +1,6 @@
 ﻿namespace ScalableMatch.Application.MatchBackfill
 {
-    internal interface IStartMatchBackfillUseCase
+    public interface IStartMatchBackfillUseCase
     {
     }
 }
