@@ -23,6 +23,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ScalableMatch.Application.T
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ScalableMatch.Infrastructure.IntegrationTests", "tests\ScalableMatch.Infrastructure.IntegrationTests\ScalableMatch.Infrastructure.IntegrationTests.csproj", "{A4582555-684C-40B5-8CC2-E97B145F22AF}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ScalableMatch.Application.IntegrationTests", "tests\ScalableMatch.Application.IntegrationTests\ScalableMatch.Application.IntegrationTests.csproj", "{B97A6C62-686D-4701-9ABE-C6EAE7E124A9}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -61,6 +63,10 @@ Global
 		{A4582555-684C-40B5-8CC2-E97B145F22AF}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{A4582555-684C-40B5-8CC2-E97B145F22AF}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{A4582555-684C-40B5-8CC2-E97B145F22AF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B97A6C62-686D-4701-9ABE-C6EAE7E124A9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B97A6C62-686D-4701-9ABE-C6EAE7E124A9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B97A6C62-686D-4701-9ABE-C6EAE7E124A9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B97A6C62-686D-4701-9ABE-C6EAE7E124A9}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -74,6 +80,7 @@ Global
 		{517FBBCB-F467-4DEF-AE9F-3CF232D6F62B} = {E8536A08-683D-408B-912A-844CDE044478}
 		{41F4A908-67C9-4C68-A959-8DE4616101D6} = {9B708584-174A-435E-B834-A4F6FE79A4D1}
 		{A4582555-684C-40B5-8CC2-E97B145F22AF} = {9B708584-174A-435E-B834-A4F6FE79A4D1}
+		{B97A6C62-686D-4701-9ABE-C6EAE7E124A9} = {9B708584-174A-435E-B834-A4F6FE79A4D1}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {244B8B48-AAA0-40F2-96FC-98F6D984E740}
