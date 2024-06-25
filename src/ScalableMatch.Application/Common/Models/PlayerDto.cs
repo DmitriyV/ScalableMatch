@@ -2,7 +2,7 @@
 {
     public class PlayerDto
     {
-        public string Id { get; set; }
+        public required string Id { get; set; }
 
         public int LatencyInMs { get; set; }
     }
