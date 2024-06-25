@@ -18,5 +18,16 @@ namespace ScalableMatch.Domain.Entities
                 _latencyInMs = value;
             }
         }
+
+        public override bool Equals(object? obj)
+        {
+            return obj is Player player &&
+                   Id == player.Id;
+        }
+
+        public override int GetHashCode()
+        {
+            return HashCode.Combine(Id);
+        }
     }
 }
