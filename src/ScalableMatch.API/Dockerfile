@@ -8,10 +8,11 @@ EXPOSE 8080
 FROM mcr.microsoft.com/dotnet/sdk:8.0 AS build
 ARG BUILD_CONFIGURATION=Release
 WORKDIR /src
-COPY ["ScalableMatch.API/ScalableMatch.API.csproj", "ScalableMatch.API/"]
-RUN dotnet restore "./ScalableMatch.API/ScalableMatch.API.csproj"
+COPY ["src/ScalableMatch.API/ScalableMatch.API.csproj", "src/ScalableMatch.API/"]
+COPY ["src/ScalableMatch.Domain/ScalableMatch.Domain.csproj", "src/ScalableMatch.Domain/"]
+RUN dotnet restore "./src/ScalableMatch.API/ScalableMatch.API.csproj"
 COPY . .
-WORKDIR "/src/ScalableMatch.API"
+WORKDIR "/src/src/ScalableMatch.API"
 RUN dotnet build "./ScalableMatch.API.csproj" -c $BUILD_CONFIGURATION -o /app/build
 
 FROM build AS publish
