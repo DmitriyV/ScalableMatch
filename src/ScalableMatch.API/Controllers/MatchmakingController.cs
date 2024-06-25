@@ -22,7 +22,7 @@ namespace ScalableMatch.API.Controllers
         [ProducesResponseType(StatusCodes.Status400BadRequest)]
         public ActionResult<StartMatchmakingResponse> StartMatchmaking([FromBody] StartMatchmakingRequest request)
         {
-            var ticket = _startMatchmakingUseCase.QueuePlayer(request.Player);
+            var ticket = _startMatchmakingUseCase.QueuePlayer(request.Player, request.GameId);
 
             return Ok(new StartMatchmakingResponse()
             {

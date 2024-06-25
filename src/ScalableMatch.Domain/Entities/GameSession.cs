@@ -15,9 +15,15 @@ namespace ScalableMatch.Domain.Entities
 
         public bool IsFull => Players.Count == PlayersInGameSession.Maximum;
 
+        public string GameId { get; set; }
+
         public bool AcceptBackfill { get; set; } = true;
 
         public GameSessionState Status { get; set; }
+
+        public DateTime CreatedAt { get; set; }
+
+        public int AverageLatencyInMs => (int) Players.Average(x => x.LatencyInMs);
 
         public void AddPlayer(Player player)
         {
