@@ -19,8 +19,7 @@ namespace ScalableMatch.Domain.Entities
 
         public void AddPlayer(Player player)
         {
-            var sessionIsFull = Players.Count >= PlayersInGameSession.Maximum;
-            if (sessionIsFull)
+            if (HasEnoughPlayers)
                 throw new TooManyPlayersException();
 
             Players.Add(player);
