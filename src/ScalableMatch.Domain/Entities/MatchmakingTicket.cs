@@ -1,8 +1,7 @@
 ﻿using ScalableMatch.Domain.Common;
-using ScalableMatch.Domain.Entities;
 using ScalableMatch.Domain.Enums;
 
-namespace ScalableMatch.API.Models
+namespace ScalableMatch.Domain.Entities
 {
     public class MatchmakingTicket : BaseEntity
     {
