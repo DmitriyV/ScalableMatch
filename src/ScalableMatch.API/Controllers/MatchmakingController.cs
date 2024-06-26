@@ -24,6 +24,8 @@ namespace ScalableMatch.API.Controllers
         [ProducesResponseType(StatusCodes.Status400BadRequest)]
         public async Task<ActionResult<StartMatchmakingResponse>> StartMatchmaking([FromBody] StartMatchmakingRequest request)
         {
+            _logger.LogInformation("Start matchmaking for player {0}", request.Player.Id);
+
             MatchmakingTicketDto ticket;
             try
             {
@@ -31,8 +33,12 @@ namespace ScalableMatch.API.Controllers
             }
             catch (ValidationException e)
             {
+                _logger.LogWarning(e.Message);
+
                 return BadRequest(e.Message);
             }
+
+            _logger.LogInformation("Ticket {0} for player {1} has been queued", ticket.Id, request.Player.Id);
 
             return Ok(new StartMatchmakingResponse()
             {
