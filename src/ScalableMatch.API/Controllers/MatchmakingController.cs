@@ -60,7 +60,7 @@ namespace ScalableMatch.API.Controllers
             {
                 await _stopMatchmakingUseCase.DequeuePlayerAsync(request.TicketId);
             }
-            catch(ValidationException e) 
+            catch (ValidationException e)
             {
                 _logger.LogWarning(e.Message);
                 return BadRequest(e.Message);
