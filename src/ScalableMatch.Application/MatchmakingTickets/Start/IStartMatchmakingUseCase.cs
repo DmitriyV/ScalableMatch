@@ -4,6 +4,6 @@ namespace ScalableMatch.Application.MatchmakingTickets.Start
 {
     public interface IStartMatchmakingUseCase
     {
-        MatchmakingTicketDto QueuePlayer(PlayerDto player, string gameId);
+        Task<MatchmakingTicketDto> QueuePlayerAsync(PlayerDto player, string gameId);
     }
 }

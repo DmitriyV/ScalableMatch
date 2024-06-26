@@ -14,4 +14,8 @@
     <ProjectReference Include="..\ScalableMatch.Domain\ScalableMatch.Domain.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="MatchmakingTickets\Matchmaking\" />
+  </ItemGroup>
+
 </Project>

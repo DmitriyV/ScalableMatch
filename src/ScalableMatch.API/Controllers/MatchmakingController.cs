@@ -20,9 +20,9 @@ namespace ScalableMatch.API.Controllers
         [HttpPost("StartMatchmaking")]
         [ProducesResponseType(StatusCodes.Status200OK)]
         [ProducesResponseType(StatusCodes.Status400BadRequest)]
-        public ActionResult<StartMatchmakingResponse> StartMatchmaking([FromBody] StartMatchmakingRequest request)
+        public async Task<ActionResult<StartMatchmakingResponse>> StartMatchmaking([FromBody] StartMatchmakingRequest request)
         {
-            var ticket = _startMatchmakingUseCase.QueuePlayer(request.Player, request.GameId);
+            var ticket = await _startMatchmakingUseCase.QueuePlayerAsync(request.Player, request.GameId);
 
             return Ok(new StartMatchmakingResponse()
             {
