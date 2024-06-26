@@ -11,7 +11,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ScalableMatch.API", "src\Sc
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ScalableMatch.Domain", "src\ScalableMatch.Domain\ScalableMatch.Domain.csproj", "{8EE92EAC-87C3-4E6B-9731-228E662559E2}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ScalableMatch.API.Tests", "tests\ScalableMatch.API.Tests\ScalableMatch.API.Tests.csproj", "{6BA27B88-0F73-4FC3-8282-68062D47B7E7}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ScalableMatch.API.IntegrationTests", "tests\ScalableMatch.API.Tests\ScalableMatch.API.IntegrationTests.csproj", "{6BA27B88-0F73-4FC3-8282-68062D47B7E7}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ScalableMatch.Domain.Tests", "tests\ScalableMatch.Domain.Tests\ScalableMatch.Domain.Tests.csproj", "{E77CA86C-61F4-48AC-8A22-4BBAB678D03B}"
 EndProject

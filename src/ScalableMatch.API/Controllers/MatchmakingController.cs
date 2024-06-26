@@ -1,5 +1,7 @@
 using Microsoft.AspNetCore.Mvc;
 using ScalableMatch.API.Models;
+using ScalableMatch.Application.Common.Exceptions;
+using ScalableMatch.Application.Common.Models;
 using ScalableMatch.Application.MatchmakingTickets.Start;
 
 namespace ScalableMatch.API.Controllers
@@ -22,7 +24,15 @@ namespace ScalableMatch.API.Controllers
         [ProducesResponseType(StatusCodes.Status400BadRequest)]
         public async Task<ActionResult<StartMatchmakingResponse>> StartMatchmaking([FromBody] StartMatchmakingRequest request)
         {
-            var ticket = await _startMatchmakingUseCase.QueuePlayerAsync(request.Player, request.GameId);
+            MatchmakingTicketDto ticket;
+            try
+            {
+                ticket = await _startMatchmakingUseCase.QueuePlayerAsync(request.Player, request.GameId);
+            }
+            catch (ValidationException e)
+            {
+                return BadRequest(e.Message);
+            }
 
             return Ok(new StartMatchmakingResponse()
             {
@@ -43,8 +53,7 @@ namespace ScalableMatch.API.Controllers
         [ProducesResponseType(StatusCodes.Status400BadRequest)]
         public ActionResult StartMatchBackfill([FromBody] StartMatchBackfillRequest request)
         {
-            //todo
-            return Ok();
+            throw new NotImplementedException();
         }
     }
 }
