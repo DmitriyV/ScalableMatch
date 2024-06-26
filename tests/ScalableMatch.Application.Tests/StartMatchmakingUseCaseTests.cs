@@ -1,8 +1,8 @@
 ﻿using Moq;
+using ScalableMatch.Application.Common.Exceptions;
 using ScalableMatch.Application.Common.Interfaces;
 using ScalableMatch.Application.Common.Models;
 using ScalableMatch.Application.Common.Validators;
-using ScalableMatch.Application.Common.Exceptions;
 using ScalableMatch.Application.MatchmakingTickets.Start;
 using ScalableMatch.Domain.Entities;
 

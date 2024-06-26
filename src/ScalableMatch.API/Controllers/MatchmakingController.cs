@@ -3,6 +3,7 @@ using ScalableMatch.API.Models;
 using ScalableMatch.Application.Common.Exceptions;
 using ScalableMatch.Application.Common.Models;
 using ScalableMatch.Application.MatchmakingTickets.Start;
+using ScalableMatch.Application.MatchmakingTickets.Stop;
 
 namespace ScalableMatch.API.Controllers
 {
@@ -12,11 +13,13 @@ namespace ScalableMatch.API.Controllers
     {
         private readonly ILogger<MatchmakingController> _logger;
         private readonly IStartMatchmakingUseCase _startMatchmakingUseCase;
+        private readonly IStopMatchmakingUseCase _stopMatchmakingUseCase;
 
-        public MatchmakingController(ILogger<MatchmakingController> logger, IStartMatchmakingUseCase startMatchmakingUseCase)
+        public MatchmakingController(ILogger<MatchmakingController> logger, IStartMatchmakingUseCase startMatchmakingUseCase, IStopMatchmakingUseCase stopMatchmakingUseCase)
         {
             _logger = logger;
             _startMatchmakingUseCase = startMatchmakingUseCase;
+            _stopMatchmakingUseCase = stopMatchmakingUseCase;
         }
 
         [HttpPost("StartMatchmaking")]
@@ -49,8 +52,14 @@ namespace ScalableMatch.API.Controllers
         [HttpPost("StopMatchmaking")]
         [ProducesResponseType(StatusCodes.Status200OK)]
         [ProducesResponseType(StatusCodes.Status400BadRequest)]
-        public ActionResult StopMatchmaking([FromBody] StopMatchmakingRequest request)
+        public async Task<ActionResult> StopMatchmakingAsync([FromBody] StopMatchmakingRequest request)
         {
+            _logger.LogInformation("Stop matchmaking for ticket {0}", request.TicketId);
+
+            await _stopMatchmakingUseCase.DequeuePlayerAsync(request.TicketId);
+
+            _logger.LogInformation("Ticket {0} has been dequeued", request.TicketId);
+
             return Ok();
         }
 

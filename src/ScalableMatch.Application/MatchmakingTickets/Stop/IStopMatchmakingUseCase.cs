@@ -2,5 +2,6 @@
 {
     public interface IStopMatchmakingUseCase
     {
+        Task DequeuePlayerAsync(string ticketId);
     }
 }

@@ -22,7 +22,7 @@ namespace ScalableMatch.Application.MatchmakingTickets.Start
         public async Task<MatchmakingTicketDto> QueuePlayerAsync(PlayerDto player, string gameId)
         {
             var result = _validator.Validate(player, out string message);
-            if(result == false)
+            if (result == false)
                 throw new ValidationException(message);
 
             var ticket = new MatchmakingTicket()
