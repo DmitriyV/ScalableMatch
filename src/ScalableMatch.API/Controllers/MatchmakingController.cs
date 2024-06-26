@@ -56,7 +56,15 @@ namespace ScalableMatch.API.Controllers
         {
             _logger.LogInformation("Stop matchmaking for ticket {0}", request.TicketId);
 
-            await _stopMatchmakingUseCase.DequeuePlayerAsync(request.TicketId);
+            try
+            {
+                await _stopMatchmakingUseCase.DequeuePlayerAsync(request.TicketId);
+            }
+            catch(ValidationException e) 
+            {
+                _logger.LogWarning(e.Message);
+                return BadRequest(e.Message);
+            }
 
             _logger.LogInformation("Ticket {0} has been dequeued", request.TicketId);
 
