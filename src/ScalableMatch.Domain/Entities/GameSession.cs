@@ -7,9 +7,7 @@ namespace ScalableMatch.Domain.Entities
 {
     public class GameSession : BaseEntity
     {
-        private HashSet<Player> Players { get; set; } = [];
-
-        public int NumberOfPlayers => Players.Count;
+        public List<Player> Players { get; set; } = [];
 
         public bool HasEnoughPlayers => Players.Count >= PlayersInGameSession.Minumum;
 
@@ -22,8 +20,6 @@ namespace ScalableMatch.Domain.Entities
         public GameSessionState Status { get; set; }
 
         public DateTime CreatedAt { get; set; }
-
-        public int AverageLatencyInMs => (int)Players.Average(x => x.LatencyInMs);
 
         public void AddPlayer(Player player)
         {

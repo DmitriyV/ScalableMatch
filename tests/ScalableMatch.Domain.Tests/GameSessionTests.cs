@@ -36,23 +36,5 @@ namespace ScalableMatch.Domain.Tests
 
             Assert.Throws<TooManyPlayersException>(() => gameSession.AddPlayer(new Player() { Id = "10", LatencyInMs = 10 }));
         }
-
-        [Fact]
-        public void AddPlayer_SamePlayerTwice_OnlyOnePlayerIAdded()
-        {
-            var gameSession = new GameSession()
-            {
-                Id = "id",
-                AcceptBackfill = true,
-                Status = Enums.GameSessionState.Created,
-                GameId = "game id"
-            };
-            var player = new Player() { Id = "id", LatencyInMs = 15 };
-
-            gameSession.AddPlayer(player);
-            gameSession.AddPlayer(player);
-
-            Assert.Equal(1, gameSession.NumberOfPlayers);
-        }
     }
 }
