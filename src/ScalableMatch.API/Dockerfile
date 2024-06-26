@@ -9,6 +9,7 @@ FROM mcr.microsoft.com/dotnet/sdk:8.0 AS build
 ARG BUILD_CONFIGURATION=Release
 WORKDIR /src
 COPY ["src/ScalableMatch.API/ScalableMatch.API.csproj", "src/ScalableMatch.API/"]
+COPY ["src/ScalableMatch.Infrastructure/ScalableMatch.Infrastructure.csproj", "src/ScalableMatch.Infrastructure/"]
 COPY ["src/ScalableMatch.Domain/ScalableMatch.Domain.csproj", "src/ScalableMatch.Domain/"]
 RUN dotnet restore "./src/ScalableMatch.API/ScalableMatch.API.csproj"
 COPY . .
