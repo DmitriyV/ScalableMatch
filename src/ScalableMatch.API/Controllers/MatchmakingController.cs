@@ -68,7 +68,7 @@ namespace ScalableMatch.API.Controllers
 
             _logger.LogInformation("Ticket {0} has been dequeued", request.TicketId);
 
-            return Ok();
+            return Ok(request.TicketId);
         }
 
         [HttpPost("StartMatchBackfill")]
