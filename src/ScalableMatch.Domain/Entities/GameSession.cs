@@ -15,7 +15,7 @@ namespace ScalableMatch.Domain.Entities
 
         public required string GameId { get; set; }
 
-        public bool AcceptBackfill { get; set; } = true;
+        public bool AcceptBackfill { get; set; } = false;
 
         public GameSessionState Status { get; set; }
 
