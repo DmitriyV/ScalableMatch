@@ -8,7 +8,7 @@ namespace ScalableMatch.Infrastructure
     {
         public static IServiceCollection AddInfrastructureServices(this IServiceCollection services)
         {
-            services.AddTransient<ITicketRepository, TicketRepository>();
+            services.AddTransient<ITicketRepository, FakeTicketRepository>(); //replace FakeTicketRepository with TicketRepository when it's implemented
 
             return services;
         }
