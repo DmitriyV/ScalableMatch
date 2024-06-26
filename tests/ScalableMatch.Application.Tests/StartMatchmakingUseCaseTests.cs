@@ -1,10 +1,8 @@
 ﻿using Moq;
-using ScalableMatch.Application.Common;
 using ScalableMatch.Application.Common.Interfaces;
 using ScalableMatch.Application.Common.Models;
 using ScalableMatch.Application.MatchmakingTickets.Start;
 using ScalableMatch.Domain.Entities;
-using ScalableMatch.Domain.Enums;
 
 namespace ScalableMatch.Application.Tests
 {
@@ -17,7 +15,7 @@ namespace ScalableMatch.Application.Tests
             const string gameId = "game id";
             Mock<ITicketRepository> repositoryMock = new Mock<ITicketRepository>();
             var ticketRepository = repositoryMock.Object;
-            
+
             var useCase = new StartMatchmakingUseCase(ticketRepository);
 
             await useCase.QueuePlayerAsync(playerDto, gameId);

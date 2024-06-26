@@ -10,7 +10,7 @@ namespace ScalableMatch.Application.Tests
         public void PlayerDtoToEntity_ValidParameters_ShouldMap()
         {
             var dto = new PlayerDto()
-            { 
+            {
                 Id = "player id",
                 LatencyInMs = 14
             };

@@ -23,7 +23,7 @@ namespace ScalableMatch.Domain.Entities
 
         public DateTime CreatedAt { get; set; }
 
-        public int AverageLatencyInMs => (int) Players.Average(x => x.LatencyInMs);
+        public int AverageLatencyInMs => (int)Players.Average(x => x.LatencyInMs);
 
         public void AddPlayer(Player player)
         {
