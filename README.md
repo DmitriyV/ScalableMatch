@@ -52,6 +52,10 @@ The matchmaking service is built using clean architecture principles to ensure t
 ## Example of architecture diagram
 ![Cloud diagram example](https://raw.githubusercontent.com/DmitriyV/ScalableMatch/main/img/ArchitectureExample.png)
 
+### How to scale:
+- AWS Fargate for Amazon ECS can be scaled out up to 1000 concurrent ECS tasks and supports autoscaling
+- AWS DynamoDB indexes can be provisioned on-demand and autoscaled according to the load.
+
 ## Design Considerations
 
 - **Scalability**: The service is designed to support multiple games and millions of players, leveraging DynamoDB for scalable and efficient data storage.
