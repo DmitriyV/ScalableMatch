@@ -46,6 +46,9 @@ The matchmaking service is built using clean architecture principles to ensure t
 - **MatchmakingController**: Provides endpoints to queue player requests and dequeue requests. Basically, this is the Presentantion Layer.
 - **MatchmakingHostedService**: A background service that runs **AssignSessionUseCase** every second. 
 
+### 5. **Unit Tests**
+- All the functionality is covered with unit tests according to **TDD** approach.
+
 ## Example of architecture diagram
 ![Cloud diagram example](https://raw.githubusercontent.com/DmitriyV/ScalableMatch/main/img/ArchitectureExample.png)
 
