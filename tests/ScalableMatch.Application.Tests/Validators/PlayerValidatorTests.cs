@@ -1,7 +1,7 @@
 ﻿using ScalableMatch.Application.Common.Models;
 using ScalableMatch.Application.Common.Validators;
 
-namespace ScalableMatch.Application.Tests
+namespace ScalableMatch.Application.Tests.Validators
 {
     public class PlayerValidatorTests
     {

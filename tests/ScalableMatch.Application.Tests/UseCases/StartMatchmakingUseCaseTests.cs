@@ -6,7 +6,7 @@ using ScalableMatch.Application.Common.Validators;
 using ScalableMatch.Application.MatchmakingTickets.Start;
 using ScalableMatch.Domain.Entities;
 
-namespace ScalableMatch.Application.Tests
+namespace ScalableMatch.Application.Tests.UseCases
 {
     public class StartMatchmakingUseCaseTests
     {
