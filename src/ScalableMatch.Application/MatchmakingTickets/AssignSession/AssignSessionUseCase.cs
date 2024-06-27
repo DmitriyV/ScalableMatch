@@ -32,7 +32,7 @@ namespace ScalableMatch.Application.MatchmakingTickets.Matchmaking
 
                 var potentialMatch = _matchCreator.CreateForCurrentTicket(tickets, currentTicket);
 
-                if(potentialMatch.Count >= PlayersInGameSession.Minumum)
+                if (potentialMatch.Count >= PlayersInGameSession.Minumum)
                 {
                     foreach (var ticket in potentialMatch)
                         tickets.Remove(ticket);
@@ -64,7 +64,7 @@ namespace ScalableMatch.Application.MatchmakingTickets.Matchmaking
                 ticket.Status = MatchmakingTicketStatus.Placing;
                 await _ticketRepository.UpdateTicket(ticket);
             }
-            
+
             await _sessionRepository.SaveSession(newSession);
         }
     }

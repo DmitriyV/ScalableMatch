@@ -16,19 +16,19 @@ namespace ScalableMatch.Infrastructure.Data
                     GameId = gameId,
                     Status = GameSessionState.Created,
                     CreatedAt = DateTime.Now,
-                    Players = new List<Player>() 
+                    Players = new List<Player>()
                     {
                         new Player() { Id = "51", LatencyInMs = 51 },
                         new Player() { Id = "32", LatencyInMs = 32 },
                     }
                 },
-                new GameSession() 
+                new GameSession()
                 {
                     Id = "2",
                     GameId = gameId,
                     Status = GameSessionState.Created,
                     CreatedAt = DateTime.Now,
-                    Players = new List<Player>() 
+                    Players = new List<Player>()
                     {
                         new Player() { Id = "22", LatencyInMs = 51 }
                     }

@@ -14,7 +14,7 @@ namespace ScalableMatch.Application.Tests
             {
                 new()
                 {
-                    Id = "ticket id", 
+                    Id = "ticket id",
                     GameId = "game id",
                     Player = new Player() {Id = "player id", LatencyInMs = 3}
                 },
