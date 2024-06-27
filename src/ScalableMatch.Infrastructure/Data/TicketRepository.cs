@@ -17,7 +17,7 @@ namespace ScalableMatch.Infrastructure.Data
 
         public Task SaveTicket(MatchmakingTicket ticket)
         {
-            return Task.CompletedTask;
+            throw new NotImplementedException();
         }
 
         public Task UpdateTicket(MatchmakingTicket ticket)
