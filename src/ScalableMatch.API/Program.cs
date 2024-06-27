@@ -1,3 +1,4 @@
+using ScalableMatch.API.Services;
 using ScalableMatch.Application;
 using ScalableMatch.Infrastructure;
 
@@ -12,6 +13,8 @@ namespace ScalableMatch.API
             // Add services to the container.
             builder.Services.AddApplicationServices();
             builder.Services.AddInfrastructureServices();
+
+            builder.Services.AddHostedService<MatchmakingHostedService>();
 
             builder.Services.AddControllers();
             // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
