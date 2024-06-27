@@ -50,7 +50,7 @@ namespace ScalableMatch.Application.Tests
                 Id = "ticket id",
                 GameId = "game id",
                 Player = player,
-                Status = Domain.Enums.MatchmakingTicketStatus.Queued,
+                Status = Domain.Enums.MatchmakingTicketStatus.Searching,
                 CreatedAt = DateTime.UtcNow,
             };
 

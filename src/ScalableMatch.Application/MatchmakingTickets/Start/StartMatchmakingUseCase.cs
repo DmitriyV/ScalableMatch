@@ -31,7 +31,7 @@ namespace ScalableMatch.Application.MatchmakingTickets.Start
                 Player = player.ToEntity(),
                 GameId = gameId,
                 CreatedAt = DateTime.UtcNow,
-                Status = MatchmakingTicketStatus.Queued
+                Status = MatchmakingTicketStatus.Searching
             };
 
             await _ticketRepository.SaveTicket(ticket);

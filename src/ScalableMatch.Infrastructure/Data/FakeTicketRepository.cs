@@ -38,7 +38,7 @@ namespace ScalableMatch.Infrastructure.Data
                 GameId = "fake game id",
                 Player = new Player() { Id = "fake player id", LatencyInMs = 42 },
                 CreatedAt = DateTime.Now,
-                Status = MatchmakingTicketStatus.Queued
+                Status = MatchmakingTicketStatus.Searching
             });
         }
 
