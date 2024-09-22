@@ -1,4 +1,4 @@
-﻿using ScalableMatch.Application.Common.Interfaces;
+﻿using ScalableMatch.Application.GameSession;
 using ScalableMatch.Domain.GameSession;
 
 namespace ScalableMatch.Infrastructure.GameSessionRepository

@@ -1,4 +1,4 @@
-﻿namespace ScalableMatch.Application.Common.Models
+﻿namespace ScalableMatch.Application.GameSession
 {
     public class PlayerDto
     {

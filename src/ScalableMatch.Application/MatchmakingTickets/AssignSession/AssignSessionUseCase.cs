@@ -1,5 +1,6 @@
-﻿using ScalableMatch.Application.Common.Interfaces;
+﻿using ScalableMatch.Application.GameSession;
 using ScalableMatch.Application.MatchmakingTickets.AssignSession;
+using ScalableMatch.Application.Ticket;
 using ScalableMatch.Domain.GameSession;
 using ScalableMatch.Domain.MatchmakingTicket;
 
@@ -50,7 +51,7 @@ namespace ScalableMatch.Application.MatchmakingTickets.Matchmaking
 
         private async Task SaveNewGameSession(List<MatchmakingTicket> potentialMatch, string gameId)
         {
-            var newSession = new GameSession
+            var newSession = new Domain.GameSession.GameSession
             {
                 Id = Guid.NewGuid().ToString(),
                 GameId = gameId,

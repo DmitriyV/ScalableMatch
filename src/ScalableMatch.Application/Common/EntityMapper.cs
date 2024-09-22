@@ -1,4 +1,5 @@
-﻿using ScalableMatch.Application.Common.Models;
+﻿using ScalableMatch.Application.GameSession;
+using ScalableMatch.Application.MatchmakingTickets;
 using ScalableMatch.Domain.MatchmakingTicket;
 using ScalableMatch.Domain.Player;
 

@@ -1,5 +1,6 @@
-﻿
-namespace ScalableMatch.Application.Common.Models
+﻿using ScalableMatch.Application.GameSession;
+
+namespace ScalableMatch.Application.MatchmakingTickets
 {
     public class MatchmakingTicketDto
     {

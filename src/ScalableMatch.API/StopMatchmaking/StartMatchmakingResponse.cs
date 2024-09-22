@@ -1,4 +1,4 @@
-﻿using ScalableMatch.Application.Common.Models;
+﻿using ScalableMatch.Application.MatchmakingTickets;
 
 namespace ScalableMatch.API.StopMatchmaking
 {

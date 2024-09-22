@@ -1,8 +1,8 @@
 ﻿using Moq;
-using ScalableMatch.Application.Common.Interfaces;
+using ScalableMatch.Application.GameSession;
 using ScalableMatch.Application.MatchmakingTickets.AssignSession;
 using ScalableMatch.Application.MatchmakingTickets.Matchmaking;
-using ScalableMatch.Domain.GameSession;
+using ScalableMatch.Application.Ticket;
 using ScalableMatch.Domain.MatchmakingTicket;
 using ScalableMatch.Domain.Player;
 
@@ -28,7 +28,7 @@ namespace ScalableMatch.Application.Tests.UseCases
             await useCase.ProcessMatchmakingQueue(new CancellationToken());
 
             matchCreatorMock.Verify(x => x.CreateForCurrentTicket(It.IsAny<List<MatchmakingTicket>>(), It.IsAny<MatchmakingTicket>()), Times.Never);
-            sessionRepositoryMock.Verify(x => x.SaveSession(It.IsAny<GameSession>()), Times.Never);
+            sessionRepositoryMock.Verify(x => x.SaveSession(It.IsAny<Domain.GameSession.GameSession>()), Times.Never);
         }
 
         [Fact]
@@ -66,7 +66,7 @@ namespace ScalableMatch.Application.Tests.UseCases
             await useCase.ProcessMatchmakingQueue(new CancellationToken());
 
             matchCreatorMock.Verify(x => x.CreateForCurrentTicket(It.IsAny<List<MatchmakingTicket>>(), It.IsAny<MatchmakingTicket>()), Times.Once);
-            sessionRepositoryMock.Verify(x => x.SaveSession(It.IsAny<GameSession>()), Times.Once);
+            sessionRepositoryMock.Verify(x => x.SaveSession(It.IsAny<Domain.GameSession.GameSession>()), Times.Once);
         }
     }
 }

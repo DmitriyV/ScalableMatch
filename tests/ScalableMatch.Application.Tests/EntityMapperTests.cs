@@ -1,7 +1,7 @@
 using ScalableMatch.Application.Common;
-using ScalableMatch.Application.Common.Models;
 using ScalableMatch.Domain.Player;
 using ScalableMatch.Domain.MatchmakingTicket;
+using ScalableMatch.Application.GameSession;
 
 namespace ScalableMatch.Application.Tests
 {

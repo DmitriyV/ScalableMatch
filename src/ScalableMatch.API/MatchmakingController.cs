@@ -2,7 +2,7 @@ using Microsoft.AspNetCore.Mvc;
 using ScalableMatch.API.StartMatchmaking;
 using ScalableMatch.API.StopMatchmaking;
 using ScalableMatch.Application.Common.Exceptions;
-using ScalableMatch.Application.Common.Models;
+using ScalableMatch.Application.MatchmakingTickets;
 using ScalableMatch.Application.MatchmakingTickets.Start;
 using ScalableMatch.Application.MatchmakingTickets.Stop;
 

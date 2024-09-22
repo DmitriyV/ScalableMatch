@@ -1,5 +1,5 @@
-﻿using ScalableMatch.Application.Common.Models;
-using ScalableMatch.Application.Common.Validators;
+﻿using ScalableMatch.Application.Common.Validators;
+using ScalableMatch.Application.GameSession;
 
 namespace ScalableMatch.Application.Tests.Validators
 {

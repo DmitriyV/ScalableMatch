@@ -1,4 +1,4 @@
-﻿using ScalableMatch.Application.Common.Models;
+﻿using ScalableMatch.Application.GameSession;
 
 namespace ScalableMatch.API.StartMatchmaking
 {
