@@ -1,6 +1,6 @@
 ﻿using ScalableMatch.Domain.Player;
 using ScalableMatch.Domain.MatchmakingTicket;
-using ScalableMatch.Application.Ticket;
+using ScalableMatch.Application.MatchmakingTickets;
 
 namespace ScalableMatch.Infrastructure.TicketRepository
 {

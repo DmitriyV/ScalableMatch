@@ -1,6 +1,6 @@
 ﻿using ScalableMatch.Domain.MatchmakingTicket;
 
-namespace ScalableMatch.Application.Ticket
+namespace ScalableMatch.Application.MatchmakingTickets
 {
     public interface ITicketRepository
     {

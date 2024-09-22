@@ -1,6 +1,6 @@
 ﻿using Microsoft.Extensions.DependencyInjection;
 using ScalableMatch.Application.GameSession;
-using ScalableMatch.Application.Ticket;
+using ScalableMatch.Application.MatchmakingTickets;
 using ScalableMatch.Infrastructure.GameSessionRepository;
 using ScalableMatch.Infrastructure.TicketRepository;
 

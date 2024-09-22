@@ -1,4 +1,4 @@
-﻿using ScalableMatch.Application.Ticket;
+﻿using ScalableMatch.Application.MatchmakingTickets;
 using ScalableMatch.Domain.MatchmakingTicket;
 
 namespace ScalableMatch.Infrastructure.TicketRepository

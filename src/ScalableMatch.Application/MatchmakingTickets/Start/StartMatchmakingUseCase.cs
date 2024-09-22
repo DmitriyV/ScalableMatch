@@ -2,7 +2,6 @@
 using ScalableMatch.Application.Common.Exceptions;
 using ScalableMatch.Application.Common.Validators;
 using ScalableMatch.Application.GameSession;
-using ScalableMatch.Application.Ticket;
 using ScalableMatch.Domain.MatchmakingTicket;
 
 namespace ScalableMatch.Application.MatchmakingTickets.Start
