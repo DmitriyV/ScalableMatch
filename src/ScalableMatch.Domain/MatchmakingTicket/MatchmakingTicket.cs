@@ -1,6 +1,4 @@
-﻿using ScalableMatch.Domain.Common;
-
-namespace ScalableMatch.Domain.MatchmakingTicket
+﻿namespace ScalableMatch.Domain.MatchmakingTicket
 {
     public class MatchmakingTicket : BaseEntity
     {

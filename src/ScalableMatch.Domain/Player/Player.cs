@@ -1,6 +1,4 @@
-﻿using ScalableMatch.Domain.Common;
-
-namespace ScalableMatch.Domain.Player
+﻿namespace ScalableMatch.Domain.Player
 {
     public class Player : BaseEntity
     {

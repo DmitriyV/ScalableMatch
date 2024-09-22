@@ -1,6 +1,4 @@
-﻿using ScalableMatch.Domain.Common;
-
-namespace ScalableMatch.Domain.GameSession
+﻿namespace ScalableMatch.Domain.GameSession
 {
     public class GameSession : BaseEntity
     {

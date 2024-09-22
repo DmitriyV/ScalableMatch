@@ -1,4 +1,4 @@
-﻿namespace ScalableMatch.Domain.Common
+﻿namespace ScalableMatch.Domain
 {
     public abstract class BaseEntity
     {
