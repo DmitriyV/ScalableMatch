@@ -1,13 +1,10 @@
 ﻿using ScalableMatch.Domain.Common;
-using ScalableMatch.Domain.Constants;
-using ScalableMatch.Domain.Enums;
-using ScalableMatch.Domain.Exceptions;
 
-namespace ScalableMatch.Domain.Entities
+namespace ScalableMatch.Domain.GameSession
 {
     public class GameSession : BaseEntity
     {
-        public List<Player> Players { get; set; } = [];
+        public List<Player.Player> Players { get; set; } = [];
 
         public bool HasEnoughPlayers => Players.Count >= PlayersInGameSession.Minumum;
 
@@ -21,7 +18,7 @@ namespace ScalableMatch.Domain.Entities
 
         public DateTime CreatedAt { get; set; }
 
-        public void AddPlayer(Player player)
+        public void AddPlayer(Player.Player player)
         {
             if (IsFull)
                 throw new TooManyPlayersException();

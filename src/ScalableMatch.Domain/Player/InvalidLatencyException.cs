@@ -1,4 +1,4 @@
-﻿namespace ScalableMatch.Domain.Exceptions
+﻿namespace ScalableMatch.Domain.Player
 {
     public class InvalidLatencyException : Exception
     {

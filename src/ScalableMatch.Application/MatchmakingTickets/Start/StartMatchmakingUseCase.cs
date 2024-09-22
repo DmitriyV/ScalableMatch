@@ -3,8 +3,7 @@ using ScalableMatch.Application.Common.Exceptions;
 using ScalableMatch.Application.Common.Interfaces;
 using ScalableMatch.Application.Common.Models;
 using ScalableMatch.Application.Common.Validators;
-using ScalableMatch.Domain.Entities;
-using ScalableMatch.Domain.Enums;
+using ScalableMatch.Domain.MatchmakingTicket;
 
 namespace ScalableMatch.Application.MatchmakingTickets.Start
 {

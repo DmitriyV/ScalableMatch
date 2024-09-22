@@ -1,8 +1,7 @@
 ﻿using ScalableMatch.Application.Common.Interfaces;
 using ScalableMatch.Application.MatchmakingTickets.AssignSession;
-using ScalableMatch.Domain.Constants;
-using ScalableMatch.Domain.Entities;
-using ScalableMatch.Domain.Enums;
+using ScalableMatch.Domain.GameSession;
+using ScalableMatch.Domain.MatchmakingTicket;
 
 namespace ScalableMatch.Application.MatchmakingTickets.Matchmaking
 {

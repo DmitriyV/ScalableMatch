@@ -1,7 +1,6 @@
 ﻿using ScalableMatch.Domain.Common;
-using ScalableMatch.Domain.Exceptions;
 
-namespace ScalableMatch.Domain.Entities
+namespace ScalableMatch.Domain.Player
 {
     public class Player : BaseEntity
     {

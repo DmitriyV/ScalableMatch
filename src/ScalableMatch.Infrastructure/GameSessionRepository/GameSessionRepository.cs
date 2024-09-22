@@ -1,7 +1,7 @@
 ﻿using ScalableMatch.Application.Common.Interfaces;
-using ScalableMatch.Domain.Entities;
+using ScalableMatch.Domain.GameSession;
 
-namespace ScalableMatch.Infrastructure.Data
+namespace ScalableMatch.Infrastructure.GameSessionRepository
 {
     public class GameSessionRepository : IGameSessionRepository
     {

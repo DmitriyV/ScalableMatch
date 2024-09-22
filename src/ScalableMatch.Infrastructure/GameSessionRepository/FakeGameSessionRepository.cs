@@ -1,8 +1,8 @@
 ﻿using ScalableMatch.Application.Common.Interfaces;
-using ScalableMatch.Domain.Entities;
-using ScalableMatch.Domain.Enums;
+using ScalableMatch.Domain.GameSession;
+using ScalableMatch.Domain.Player;
 
-namespace ScalableMatch.Infrastructure.Data
+namespace ScalableMatch.Infrastructure.GameSessionRepository
 {
     public class FakeGameSessionRepository : IGameSessionRepository
     {

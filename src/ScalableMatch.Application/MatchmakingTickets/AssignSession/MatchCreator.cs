@@ -1,5 +1,5 @@
-﻿using ScalableMatch.Domain.Constants;
-using ScalableMatch.Domain.Entities;
+﻿using ScalableMatch.Domain.GameSession;
+using ScalableMatch.Domain.MatchmakingTicket;
 
 namespace ScalableMatch.Application.MatchmakingTickets.AssignSession
 {

@@ -1,4 +1,4 @@
-﻿namespace ScalableMatch.Domain.Constants
+﻿namespace ScalableMatch.Domain.GameSession
 {
     public static class PlayersInGameSession
     {

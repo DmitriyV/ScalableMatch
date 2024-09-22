@@ -1,7 +1,7 @@
 ﻿using ScalableMatch.Application.Common.Exceptions;
 using ScalableMatch.Application.Common.Interfaces;
 using ScalableMatch.Application.Common.Validators;
-using ScalableMatch.Domain.Enums;
+using ScalableMatch.Domain.MatchmakingTicket;
 
 namespace ScalableMatch.Application.MatchmakingTickets.Stop
 {

@@ -17,7 +17,7 @@ namespace ScalableMatch.API
             builder.Services.AddHostedService<MatchmakingHostedService>();
 
             builder.Services.AddControllers();
-            // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
+
             builder.Services.AddEndpointsApiExplorer();
             builder.Services.AddSwaggerGen();
 
@@ -31,7 +31,6 @@ namespace ScalableMatch.API
             }
 
             app.UseAuthorization();
-
 
             app.MapControllers();
 

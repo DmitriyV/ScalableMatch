@@ -1,6 +1,7 @@
 ﻿using Microsoft.Extensions.DependencyInjection;
 using ScalableMatch.Application.Common.Interfaces;
-using ScalableMatch.Infrastructure.Data;
+using ScalableMatch.Infrastructure.GameSessionRepository;
+using ScalableMatch.Infrastructure.TicketRepository;
 
 namespace ScalableMatch.Infrastructure
 {

@@ -1,6 +1,7 @@
 ﻿using Moq;
 using ScalableMatch.Application.MatchmakingTickets.AssignSession;
-using ScalableMatch.Domain.Entities;
+using ScalableMatch.Domain.Player;
+using ScalableMatch.Domain.MatchmakingTicket;
 
 namespace ScalableMatch.Application.Tests
 {

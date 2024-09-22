@@ -1,5 +1,5 @@
-﻿using ScalableMatch.Domain.Entities;
-using ScalableMatch.Domain.Exceptions;
+﻿using ScalableMatch.Domain.GameSession;
+using ScalableMatch.Domain.Player;
 
 namespace ScalableMatch.Domain.Tests
 {
@@ -9,11 +9,11 @@ namespace ScalableMatch.Domain.Tests
         [Fact]
         public void CreateSession_ValidParameters_SessionShouldBeCreated()
         {
-            var expected = new GameSession()
+            var expected = new GameSession.GameSession()
             {
                 Id = "id",
                 AcceptBackfill = true,
-                Status = Enums.GameSessionState.Created,
+                Status = GameSessionState.Created,
                 GameId = "game id"
             };
 
@@ -23,18 +23,18 @@ namespace ScalableMatch.Domain.Tests
         [Fact]
         public void AddPlayer_SessionIsFull_ShouldThrowException()
         {
-            var gameSession = new GameSession()
+            var gameSession = new GameSession.GameSession()
             {
                 Id = "id",
-                Status = Enums.GameSessionState.Created,
+                Status = GameSessionState.Created,
                 GameId = "game id"
             };
             for (var i = 0; i < 10; i++)
             {
-                gameSession.AddPlayer(new Player() { Id = i.ToString(), LatencyInMs = i + 1 });
+                gameSession.AddPlayer(new Player.Player() { Id = i.ToString(), LatencyInMs = i + 1 });
             }
 
-            Assert.Throws<TooManyPlayersException>(() => gameSession.AddPlayer(new Player() { Id = "10", LatencyInMs = 10 }));
+            Assert.Throws<TooManyPlayersException>(() => gameSession.AddPlayer(new Player.Player() { Id = "10", LatencyInMs = 10 }));
         }
     }
 }

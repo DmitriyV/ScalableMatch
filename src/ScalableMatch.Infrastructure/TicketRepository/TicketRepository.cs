@@ -1,7 +1,7 @@
 ﻿using ScalableMatch.Application.Common.Interfaces;
-using ScalableMatch.Domain.Entities;
+using ScalableMatch.Domain.MatchmakingTicket;
 
-namespace ScalableMatch.Infrastructure.Data
+namespace ScalableMatch.Infrastructure.TicketRepository
 {
     public class TicketRepository : ITicketRepository
     {

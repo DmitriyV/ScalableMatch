@@ -6,7 +6,7 @@ using ScalableMatch.Application.Common.Models;
 using ScalableMatch.Application.MatchmakingTickets.Start;
 using ScalableMatch.Application.MatchmakingTickets.Stop;
 
-namespace ScalableMatch.API.Controllers
+namespace ScalableMatch.API
 {
     [ApiController]
     [Route("api/v1/[controller]")]

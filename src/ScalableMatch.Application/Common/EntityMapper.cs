@@ -1,5 +1,6 @@
 ﻿using ScalableMatch.Application.Common.Models;
-using ScalableMatch.Domain.Entities;
+using ScalableMatch.Domain.MatchmakingTicket;
+using ScalableMatch.Domain.Player;
 
 namespace ScalableMatch.Application.Common
 {

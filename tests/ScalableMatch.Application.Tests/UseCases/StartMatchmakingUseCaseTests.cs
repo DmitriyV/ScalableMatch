@@ -4,7 +4,7 @@ using ScalableMatch.Application.Common.Interfaces;
 using ScalableMatch.Application.Common.Models;
 using ScalableMatch.Application.Common.Validators;
 using ScalableMatch.Application.MatchmakingTickets.Start;
-using ScalableMatch.Domain.Entities;
+using ScalableMatch.Domain.MatchmakingTicket;
 
 namespace ScalableMatch.Application.Tests.UseCases
 {

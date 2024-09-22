@@ -2,7 +2,9 @@
 using ScalableMatch.Application.Common.Interfaces;
 using ScalableMatch.Application.MatchmakingTickets.AssignSession;
 using ScalableMatch.Application.MatchmakingTickets.Matchmaking;
-using ScalableMatch.Domain.Entities;
+using ScalableMatch.Domain.GameSession;
+using ScalableMatch.Domain.MatchmakingTicket;
+using ScalableMatch.Domain.Player;
 
 namespace ScalableMatch.Application.Tests.UseCases
 {

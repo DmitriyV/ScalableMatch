@@ -1,8 +1,8 @@
 ﻿using ScalableMatch.Application.Common.Interfaces;
-using ScalableMatch.Domain.Entities;
-using ScalableMatch.Domain.Enums;
+using ScalableMatch.Domain.Player;
+using ScalableMatch.Domain.MatchmakingTicket;
 
-namespace ScalableMatch.Infrastructure.Data
+namespace ScalableMatch.Infrastructure.TicketRepository
 {
     public class FakeTicketRepository : ITicketRepository
     {

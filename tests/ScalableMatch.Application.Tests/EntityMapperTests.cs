@@ -1,6 +1,7 @@
 using ScalableMatch.Application.Common;
 using ScalableMatch.Application.Common.Models;
-using ScalableMatch.Domain.Entities;
+using ScalableMatch.Domain.Player;
+using ScalableMatch.Domain.MatchmakingTicket;
 
 namespace ScalableMatch.Application.Tests
 {
@@ -50,7 +51,7 @@ namespace ScalableMatch.Application.Tests
                 Id = "ticket id",
                 GameId = "game id",
                 Player = player,
-                Status = Domain.Enums.MatchmakingTicketStatus.Searching,
+                Status = MatchmakingTicketStatus.Searching,
                 CreatedAt = DateTime.UtcNow,
             };
 

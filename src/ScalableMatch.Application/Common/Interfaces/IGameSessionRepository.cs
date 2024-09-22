@@ -1,4 +1,4 @@
-﻿using ScalableMatch.Domain.Entities;
+﻿using ScalableMatch.Domain.GameSession;
 
 namespace ScalableMatch.Application.Common.Interfaces
 {

@@ -2,15 +2,11 @@
 
 namespace ScalableMatch.API.AssignSession
 {
-    public class MatchmakingHostedService : BackgroundService
+    public class MatchmakingHostedService(IAssignSessionUseCase assignSessionUseCase) : BackgroundService
     {
         private const int TicketProcessingDelayInMs = 1000; //todo get from IConfiguration
-        private readonly IAssignSessionUseCase _assignSessionUseCase;
 
-        public MatchmakingHostedService(IAssignSessionUseCase assignSessionUseCase)
-        {
-            _assignSessionUseCase = assignSessionUseCase;
-        }
+        private readonly IAssignSessionUseCase _assignSessionUseCase = assignSessionUseCase;
 
         protected override async Task ExecuteAsync(CancellationToken stoppingToken)
         {

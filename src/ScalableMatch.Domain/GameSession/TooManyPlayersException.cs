@@ -1,6 +1,4 @@
-﻿using ScalableMatch.Domain.Constants;
-
-namespace ScalableMatch.Domain.Exceptions
+﻿namespace ScalableMatch.Domain.GameSession
 {
     public class TooManyPlayersException : Exception
     {
