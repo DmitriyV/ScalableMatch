@@ -2,7 +2,6 @@
 using ScalableMatch.Application.GameSession;
 using ScalableMatch.Application.MatchmakingTickets;
 using ScalableMatch.Application.MatchmakingTickets.AssignSession;
-using ScalableMatch.Application.MatchmakingTickets.Matchmaking;
 using ScalableMatch.Domain.MatchmakingTicket;
 using ScalableMatch.Domain.Player;
 

@@ -1,7 +1,6 @@
 ﻿using Microsoft.Extensions.DependencyInjection;
 using ScalableMatch.Application.Common.Validators;
 using ScalableMatch.Application.MatchmakingTickets.AssignSession;
-using ScalableMatch.Application.MatchmakingTickets.Matchmaking;
 using ScalableMatch.Application.MatchmakingTickets.Start;
 using ScalableMatch.Application.MatchmakingTickets.Stop;
 

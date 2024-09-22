@@ -1,9 +1,8 @@
 ﻿using ScalableMatch.Application.GameSession;
-using ScalableMatch.Application.MatchmakingTickets.AssignSession;
 using ScalableMatch.Domain.GameSession;
 using ScalableMatch.Domain.MatchmakingTicket;
 
-namespace ScalableMatch.Application.MatchmakingTickets.Matchmaking
+namespace ScalableMatch.Application.MatchmakingTickets.AssignSession
 {
     public class AssignSessionUseCase : IAssignSessionUseCase
     {
