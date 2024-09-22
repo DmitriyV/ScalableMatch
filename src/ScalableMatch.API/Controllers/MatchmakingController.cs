@@ -1,5 +1,6 @@
 using Microsoft.AspNetCore.Mvc;
-using ScalableMatch.API.Models;
+using ScalableMatch.API.StartMatchmaking;
+using ScalableMatch.API.StopMatchmaking;
 using ScalableMatch.Application.Common.Exceptions;
 using ScalableMatch.Application.Common.Models;
 using ScalableMatch.Application.MatchmakingTickets.Start;
@@ -43,10 +44,7 @@ namespace ScalableMatch.API.Controllers
 
             _logger.LogInformation("Ticket {0} for player {1} has been queued", ticket.Id, request.Player.Id);
 
-            return Ok(new StartMatchmakingResponse()
-            {
-                MatchmakingTicket = ticket
-            });
+            return Ok(new StartMatchmakingResponse(ticket));
         }
 
         [HttpPost("StopMatchmaking")]

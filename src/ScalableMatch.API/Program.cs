@@ -1,4 +1,4 @@
-using ScalableMatch.API.Services;
+using ScalableMatch.API.AssignSession;
 using ScalableMatch.Application;
 using ScalableMatch.Infrastructure;
 

@@ -1,6 +1,6 @@
 ﻿using ScalableMatch.Application.MatchmakingTickets.AssignSession;
 
-namespace ScalableMatch.API.Services
+namespace ScalableMatch.API.AssignSession
 {
     public class MatchmakingHostedService : BackgroundService
     {
