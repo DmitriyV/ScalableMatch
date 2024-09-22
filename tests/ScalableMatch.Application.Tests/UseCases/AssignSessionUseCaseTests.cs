@@ -11,7 +11,7 @@ namespace ScalableMatch.Application.Tests.UseCases
     public class AssignSessionUseCaseTests
     {
         [Fact]
-        public async void MatchmakingQueue_NoSearchingTickets_NoGameSessionCreated()
+        public async Task MatchmakingQueue_NoSearchingTickets_NoGameSessionCreated()
         {
             var ticketRepositoryMock = new Mock<ITicketRepository>();
             ticketRepositoryMock.Setup(x => x.GetSearchingTickets()).ReturnsAsync([]);
@@ -32,7 +32,7 @@ namespace ScalableMatch.Application.Tests.UseCases
         }
 
         [Fact]
-        public async void MatchmakingQueue_MatchingTicketsInQueue_GameSessionCreated()
+        public async Task MatchmakingQueue_MatchingTicketsInQueue_GameSessionCreated()
         {
             var ticketRepositoryMock = new Mock<ITicketRepository>();
 
