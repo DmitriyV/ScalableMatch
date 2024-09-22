@@ -15,7 +15,7 @@ namespace ScalableMatch.Application.Tests.UseCases
         {
             var playerDto = new PlayerDto() { Id = "player id", LatencyInMs = 42 };
             const string gameId = "game id";
-            Mock<ITicketRepository> repositoryMock = new Mock<ITicketRepository>();
+            Mock<ITicketRepository> repositoryMock = new();
             var ticketRepository = repositoryMock.Object;
             var validatorMock = new Mock<IPlayerDtoValidator>();
             string message;

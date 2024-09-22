@@ -4,20 +4,13 @@ using ScalableMatch.Domain.MatchmakingTicket;
 
 namespace ScalableMatch.Application.MatchmakingTickets.AssignSession
 {
-    public class AssignSessionUseCase : IAssignSessionUseCase
+    public class AssignSessionUseCase(IGameSessionRepository sessionRepository,
+        ITicketRepository ticketRepository,
+        IMatchCreator matchCreator) : IAssignSessionUseCase
     {
-        private readonly IGameSessionRepository _sessionRepository;
-        private readonly ITicketRepository _ticketRepository;
-        private readonly IMatchCreator _matchCreator;
-
-        public AssignSessionUseCase(IGameSessionRepository sessionRepository,
-            ITicketRepository ticketRepository,
-            IMatchCreator matchCreator)
-        {
-            _sessionRepository = sessionRepository;
-            _ticketRepository = ticketRepository;
-            _matchCreator = matchCreator;
-        }
+        private readonly IGameSessionRepository _sessionRepository = sessionRepository;
+        private readonly ITicketRepository _ticketRepository = ticketRepository;
+        private readonly IMatchCreator _matchCreator = matchCreator;
 
         public async Task ProcessMatchmakingQueue(CancellationToken cancellationToken)
         {
@@ -42,9 +35,7 @@ namespace ScalableMatch.Application.MatchmakingTickets.AssignSession
 
         private async Task<List<MatchmakingTicket>> GetTicketsOrderedByQueueingTime()
         {
-            return (await _ticketRepository.GetSearchingTickets())
-                                           .OrderBy(t => t.CreatedAt)
-                                           .ToList();
+            return [.. (await _ticketRepository.GetSearchingTickets()).OrderBy(t => t.CreatedAt)];
         }
 
         private async Task SaveNewGameSession(List<MatchmakingTicket> potentialMatch, string gameId)

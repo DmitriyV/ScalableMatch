@@ -1,9 +1,6 @@
 ﻿namespace ScalableMatch.Application.Common.Exceptions
 {
-    public class ValidationException : Exception
+    public class ValidationException(string errorMessage) : Exception(errorMessage)
     {
-        public ValidationException(string errorMessage) : base(errorMessage)
-        {
-        }
     }
 }

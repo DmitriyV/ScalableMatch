@@ -10,18 +10,11 @@ namespace ScalableMatch.API
 {
     [ApiController]
     [Route("api/v1/[controller]")]
-    public class MatchmakingController : ControllerBase
+    public class MatchmakingController(ILogger<MatchmakingController> logger, IStartMatchmakingUseCase startMatchmakingUseCase, IStopMatchmakingUseCase stopMatchmakingUseCase) : ControllerBase
     {
-        private readonly ILogger<MatchmakingController> _logger;
-        private readonly IStartMatchmakingUseCase _startMatchmakingUseCase;
-        private readonly IStopMatchmakingUseCase _stopMatchmakingUseCase;
-
-        public MatchmakingController(ILogger<MatchmakingController> logger, IStartMatchmakingUseCase startMatchmakingUseCase, IStopMatchmakingUseCase stopMatchmakingUseCase)
-        {
-            _logger = logger;
-            _startMatchmakingUseCase = startMatchmakingUseCase;
-            _stopMatchmakingUseCase = stopMatchmakingUseCase;
-        }
+        private readonly ILogger<MatchmakingController> _logger = logger;
+        private readonly IStartMatchmakingUseCase _startMatchmakingUseCase = startMatchmakingUseCase;
+        private readonly IStopMatchmakingUseCase _stopMatchmakingUseCase = stopMatchmakingUseCase;
 
         [HttpPost("StartMatchmaking")]
         [ProducesResponseType(StatusCodes.Status200OK)]

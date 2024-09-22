@@ -3,11 +3,9 @@ using ScalableMatch.Domain.MatchmakingTicket;
 
 namespace ScalableMatch.Application.MatchmakingTickets.AssignSession
 {
-    public class MatchCreator : IMatchCreator
+    public class MatchCreator(ILatencyRule latencyRule) : IMatchCreator
     {
-        private readonly ILatencyRule _latencyRule;
-
-        public MatchCreator(ILatencyRule latencyRule) => _latencyRule = latencyRule;
+        private readonly ILatencyRule _latencyRule = latencyRule;
 
         public List<MatchmakingTicket> CreateForCurrentTicket(List<MatchmakingTicket> tickets, MatchmakingTicket currentTicket)
         {

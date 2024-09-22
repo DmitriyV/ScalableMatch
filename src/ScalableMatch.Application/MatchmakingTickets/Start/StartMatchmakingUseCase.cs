@@ -6,16 +6,10 @@ using ScalableMatch.Domain.MatchmakingTicket;
 
 namespace ScalableMatch.Application.MatchmakingTickets.Start
 {
-    public class StartMatchmakingUseCase : IStartMatchmakingUseCase
+    public class StartMatchmakingUseCase(ITicketRepository ticketRepository, IPlayerDtoValidator validator) : IStartMatchmakingUseCase
     {
-        private readonly ITicketRepository _ticketRepository;
-        private readonly IPlayerDtoValidator _validator;
-
-        public StartMatchmakingUseCase(ITicketRepository ticketRepository, IPlayerDtoValidator validator)
-        {
-            _ticketRepository = ticketRepository;
-            _validator = validator;
-        }
+        private readonly ITicketRepository _ticketRepository = ticketRepository;
+        private readonly IPlayerDtoValidator _validator = validator;
 
         public async Task<MatchmakingTicketDto> QueuePlayerAsync(PlayerDto player, string gameId)
         {

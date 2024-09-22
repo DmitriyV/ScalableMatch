@@ -8,9 +8,9 @@ namespace ScalableMatch.Infrastructure.TicketRepository
     {
         public Task<List<MatchmakingTicket>> GetSearchingTickets()
         {
-            List<MatchmakingTicket> tmp = new List<MatchmakingTicket>()
-            {
-                new MatchmakingTicket()
+            List<MatchmakingTicket> tmp =
+            [
+                new()
                 {
                     Id = "1",
                     GameId = "tetris",
@@ -18,7 +18,7 @@ namespace ScalableMatch.Infrastructure.TicketRepository
                     CreatedAt = DateTime.Now,
                     Status = MatchmakingTicketStatus.Searching
                 },
-                new MatchmakingTicket()
+                new()
                 {
                     Id = "2",
                     GameId = "tetris",
@@ -26,7 +26,7 @@ namespace ScalableMatch.Infrastructure.TicketRepository
                     CreatedAt = DateTime.Now,
                     Status = MatchmakingTicketStatus.Searching
                 },
-            };
+            ];
             return Task.FromResult(tmp);
         }
 

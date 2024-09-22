@@ -1,6 +1,5 @@
 ﻿using ScalableMatch.Application.GameSession;
 using ScalableMatch.Domain.GameSession;
-using ScalableMatch.Domain.Player;
 
 namespace ScalableMatch.Infrastructure.GameSessionRepository
 {
@@ -10,28 +9,28 @@ namespace ScalableMatch.Infrastructure.GameSessionRepository
         {
             return Task.FromResult(new List<GameSession>()
             {
-                new GameSession()
+                new()
                 {
                     Id = "1",
                     GameId = gameId,
                     Status = GameSessionState.Created,
                     CreatedAt = DateTime.Now,
-                    Players = new List<Player>()
-                    {
-                        new Player() { Id = "51", LatencyInMs = 51 },
-                        new Player() { Id = "32", LatencyInMs = 32 },
-                    }
+                    Players =
+                    [
+                        new() { Id = "51", LatencyInMs = 51 },
+                        new() { Id = "32", LatencyInMs = 32 },
+                    ]
                 },
-                new GameSession()
+                new()
                 {
                     Id = "2",
                     GameId = gameId,
                     Status = GameSessionState.Created,
                     CreatedAt = DateTime.Now,
-                    Players = new List<Player>()
-                    {
-                        new Player() { Id = "22", LatencyInMs = 51 }
-                    }
+                    Players =
+                    [
+                        new() { Id = "22", LatencyInMs = 51 }
+                    ]
                 }
             });
         }
