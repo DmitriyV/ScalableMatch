@@ -45,7 +45,7 @@ namespace ScalableMatch.Application.Tests.UseCases
             Assert.NotNull(ticket.Id);
             Assert.Equal(gameId, ticket.GameId);
             Assert.Equivalent(playerDto, ticket.Player);
-            Assert.Equal("Queued", ticket.Status);
+            Assert.Equal("Searching", ticket.Status);
         }
 
         [Fact]
